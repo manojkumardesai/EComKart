@@ -1,7 +1,32 @@
 <p>
   {{ getTitle() }}
 </p>
+<p [textContent]="getTitle()">
+</p>
+
+<img src = "{{ imageUrl }}" /> <!-- Src is not a value holder, is a property of img-->
+<img [src] = "imageUrl" /> <!-- Property Binding -->
 
 <ul>
   <li *ngFor="let product of products"> {{ product.name }}</li>
+</ul>
+
+<table border = 1>
+  <tr>
+    <td [attr.colspan] = "colSpan"> <!-- Attribute Binding -->
+      hello
+    </td>
+  </tr>
+  <tr>
+    <td>
+      hello
+    </td>
+    <td>
+      hello
+    </td>
+  </tr>
+</table>
+
+<ul>
+  <li *ngFor="let user of userFromGit"> Login Name:{{ user.login }} User Id: {{ user.id }}</li>
 </ul>

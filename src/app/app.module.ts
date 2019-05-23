@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductService } from './product.service';
+import { LoginService } from './login.service';
 
 
 @NgModule({
@@ -14,10 +15,12 @@ import { ProductService } from './product.service';
     ProductsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
-    ProductService
+    ProductService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
