@@ -11,21 +11,7 @@
   <li *ngFor="let product of products"> {{ product.name }}</li>
 </ul>
 
-<table border = 1>
-  <tr>
-    <td [attr.colspan] = "colSpan"> <!-- Attribute Binding -->
-      hello
-    </td>
-  </tr>
-  <tr>
-    <td>
-      hello
-    </td>
-    <td>
-      hello
-    </td>
-  </tr>
-</table>
+<button class='btn btn-primary' [ngClass]= 'resultLoaded ? "btn-primary" : "btn-danger"' (click)= 'getUsers()'>Login</button>
 
 <ul>
   <li *ngFor="let user of userFromGit"> Login Name:{{ user.login }} User Id: {{ user.id }}</li>
