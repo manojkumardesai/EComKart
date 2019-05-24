@@ -11,7 +11,7 @@
   <li *ngFor="let product of products"> {{ product.name }}</li>
 </ul>
 
-<button class='btn' [class.btn-primary] = "primaryButton">Hello World</button>
+<button [style.backgroundColor]="primaryButton">Hello World</button>
 
 <ul>
   <li *ngFor="let user of userFromGit"> Login Name:{{ user.login }} User Id: {{ user.id }}</li>
