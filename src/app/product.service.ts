@@ -17,4 +17,14 @@ export class ProductService {
             }
           ];
     }
+
+    getProduct() {
+      return {
+        name: 'One Plus 7 Pro',
+        numberOfOrders: 15036,
+        rating: 4.9896,
+        price: 42365,
+        launchDate: new Date(2019, 5, 28)
+      };
+    }
 }
