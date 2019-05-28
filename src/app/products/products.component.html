@@ -1,18 +1,1 @@
-<p>
-  {{ getTitle() }}
-</p>
-<p [textContent]="getTitle()">
-</p>
-
-<img src = "{{ imageUrl }}" /> <!-- Src is not a value holder, is a property of img-->
-<img [src] = "imageUrl" /> <!-- Property Binding -->
-
-<ul>
-  <li *ngFor="let product of products"> {{ product.name }}</li>
-</ul>
-
-<button class='btn btn-primary' [ngClass]= 'resultLoaded ? "btn-primary" : "btn-danger"' (click)= 'getUsers()'>Login</button>
-
-<ul>
-  <li *ngFor="let user of userFromGit"> Login Name:{{ user.login }} User Id: {{ user.id }}</li>
-</ul>
+<input (keyup) = 'onKeyUp($event)'/>
