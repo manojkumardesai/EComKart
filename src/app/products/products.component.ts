@@ -10,6 +10,7 @@ import { LoginService } from '../login.service';
 export class ProductsComponent implements OnInit {
   private title = 'List of Products';
   public products;
+  public product;
   public userFromGit;
   public email;
   public resultLoaded = false;
@@ -19,6 +20,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.productResponse.getProducts();
+    this.product = this.productResponse.getProduct();
     this.email = 'manojkumar@gmail.com';
   }
 

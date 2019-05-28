@@ -1,2 +1,10 @@
 One way:<input [value] = "email" (keyup.enter) = 'onKeyUp()'/><br/>
 Two Way:<input [(ngModel)] = "email" (keyup.enter) = 'onKeyUp()'/>
+
+<div>
+  {{product.name | uppercase}} <br/>
+  {{product.numberOfOrders | number}} <br/>
+  {{product.rating | number:'1.1-1'}} <br/>
+  {{product.price | currency:'INR':true:'1.2-2'}} <br/>
+  {{product.launchDate | date:'shortDate'}} <br/>
+</div>
