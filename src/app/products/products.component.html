@@ -1,1 +1,2 @@
-<input (keyup.enter) = 'onKeyUp($event)'/>
+One way:<input [value] = "email" (keyup.enter) = 'onKeyUp()'/><br/>
+Two Way:<input [(ngModel)] = "email" (keyup.enter) = 'onKeyUp()'/>

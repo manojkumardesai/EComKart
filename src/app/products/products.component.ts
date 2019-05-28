@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
   private title = 'List of Products';
   public products;
   public userFromGit;
+  public email;
   public resultLoaded = false;
   constructor(public productResponse: ProductService,
     public loginService: LoginService) {
@@ -18,6 +19,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.productResponse.getProducts();
+    this.email = 'manojkumar@gmail.com';
   }
 
 
@@ -40,7 +42,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  public onKeyUp($event) {
-    console.log($event.target.value);
+  public onKeyUp() {
+    console.log(this.email);
   }
 }
