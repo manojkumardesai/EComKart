@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductService } from './product.service';
 import { LoginService } from './login.service';
+import { FavoriteComponent } from './shared/favorite/favorite.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductsComponent
+    ProductsComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
