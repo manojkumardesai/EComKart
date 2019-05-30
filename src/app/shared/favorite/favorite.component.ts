@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorite.component.css']
 })
 export class FavoriteComponent implements OnInit {
+  @Input() userInfo: any;
   isFavorite: boolean;
   constructor() { }
 
@@ -13,6 +14,7 @@ export class FavoriteComponent implements OnInit {
   }
 
   toggleFavorite() {
+    console.log('child triggered');
     this.isFavorite = !this.isFavorite;
   }
 }

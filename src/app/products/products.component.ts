@@ -13,6 +13,7 @@ export class ProductsComponent implements OnInit {
   public product;
   public userFromGit;
   public email;
+  public stateCHange;
   public resultLoaded = false;
   constructor(public productResponse: ProductService,
     public loginService: LoginService) {
@@ -46,5 +47,12 @@ export class ProductsComponent implements OnInit {
 
   public onKeyUp() {
     console.log(this.email);
+  }
+
+  passData() {
+    this.stateCHange = {
+      name: 'Manoj',
+      action: 'PassingData from parent to child'
+    };
   }
 }
