@@ -6,6 +6,8 @@
   {{product.launchDate | date:'shortDate'}} <br/>
 </div>
 <button (click) = 'passData()'> Change state</button>
-<app-favorite [userInfo] = 'stateCHange'></app-favorite>
+<app-favorite [childUserInfo] = 'parentStateCHange' (childVerified) = 'parentDataFromChild($event)'></app-favorite>
+
+<i class="glyphicon glyphicon-ok" *ngIf = 'verifiedStatus'></i>
 
 <!-- Input parameter used for passing data from parent to child -->

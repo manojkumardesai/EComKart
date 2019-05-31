@@ -12,14 +12,17 @@ export class ProductsComponent implements OnInit {
   public products;
   public product;
   public userFromGit;
+  public counter;
   public email;
-  public stateCHange;
+  public parentStateCHange;
+  public verifiedStatus;
   public resultLoaded = false;
   constructor(public productResponse: ProductService,
     public loginService: LoginService) {
   }
 
   ngOnInit() {
+    this.counter = 0;
     this.products = this.productResponse.getProducts();
     this.product = this.productResponse.getProduct();
     this.email = 'manojkumar@gmail.com';
@@ -50,9 +53,15 @@ export class ProductsComponent implements OnInit {
   }
 
   passData() {
-    this.stateCHange = {
+    this.counter++;
+    this.parentStateCHange = {
       name: 'Manoj',
-      action: 'PassingData from parent to child'
+      action: 'PassingData from parent to child',
+      counter: this.counter
     };
+  }
+
+  parentDataFromChild(data) {
+    this.verifiedStatus = data;
   }
 }
