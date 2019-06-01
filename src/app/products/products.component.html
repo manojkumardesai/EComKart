@@ -8,9 +8,12 @@
 <button (click) = 'passData()'> Change state</button>
 <app-favorite [childUserInfo] = 'parentStateCHange'
 (childVerified) = 'parentDataFromChild($event)'></app-favorite>
-<div *ngIf = 'verifiedStatus; else unverified'>
-  <i class="glyphicon glyphicon-ok" ></i>
-</div>
+
+  <i class="glyphicon glyphicon-ok" *ngIf = 'verifiedStatus; else unverified'></i>
+
 <ng-template #unverified>
   <i  class="glyphicon glyphicon-off"></i>
 </ng-template>
+
+<div [hidden] = 'verifiedStatus'>User Unfavorited this item</div>
+<div [hidden] = '!verifiedStatus'>User Favorited this item</div>
