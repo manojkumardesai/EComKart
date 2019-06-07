@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EcomKart';
+  viewMode: String = '';
+
+  changeViewMode(view) {
+    this.viewMode = view;
+  }
 }
+
+
