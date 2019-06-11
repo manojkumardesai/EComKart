@@ -1,19 +1,9 @@
-<div>
-  {{product.name | uppercase}} <br/>
-  {{product.numberOfOrders | number}} <br/>
-  {{product.rating | number:'1.1-1'}} <br/>
-  {{product.price | currency:'INR':true:'1.2-2'}} <br/>
-  {{product.launchDate | date:'shortDate'}} <br/>
-</div>
-<button (click) = 'passData()'> Change state</button>
-<app-favorite [childUserInfo] = 'parentStateCHange'
-(childVerified) = 'parentDataFromChild($event)'></app-favorite>
+<button (click)="getProducts()">Load Products</button>
 
-  <i class="glyphicon glyphicon-ok" *ngIf = 'verifiedStatus; else unverified'></i>
-
-<ng-template #unverified>
-  <i  class="glyphicon glyphicon-off"></i>
-</ng-template>
-
-<div [hidden] = 'verifiedStatus'>User Unfavorited this item</div>
-<div [hidden] = '!verifiedStatus'>User Favorited this item</div>
+<ul>
+  <li *ngFor = "let product of products; even as isEven; trackBy: trackProduct">{{ product.name }}
+    <span *ngIf="isEven">This element is even numbered</span>
+  </li>
+</ul>
+<button (click) = "addAnItem()">Add new Element</button>
+<button (click) = "removeAnItem()">Remove One Element</button>
