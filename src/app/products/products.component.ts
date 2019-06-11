@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.counter = 0;
-    this.products = this.productResponse.getProducts();
+    //this.products = this.productResponse.getProducts();
     this.product = this.productResponse.getProduct();
     this.email = 'manojkumar@gmail.com';
   }
@@ -33,8 +33,25 @@ export class ProductsComponent implements OnInit {
     this.getUsers();
   }
 
+  addAnItem() {
+    this.products.push({id: 4, name: 'One Plus 3t', value: '10000'});
+  }
+
+  removeAnItem() {
+    this.products.pop();
+  }
+
+  public getProducts() {
+    this.products = this.productResponse.getProducts();
+  }
+
   public getTitle() {
     return this.title;
+  }
+
+  public trackProduct(index, product) {
+    console.log(product.id);
+    return product ? product.id : undefined;
   }
 
   public getUsers() {

@@ -4,14 +4,17 @@ export class ProductService {
     getProducts() {
         return [
             {
+              id: 1,
               name: 'One Plus 7',
               value: '70300'
             },
             {
+              id: 2,
               name: 'One Plus 7a',
               value: '74000'
             },
             {
+              id: 3,
               name: 'One Plus 7b',
               value: '90000'
             }
