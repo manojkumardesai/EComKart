@@ -1,9 +1,13 @@
-<button (click)="getProducts()">Load Products</button>
+<div #entireDiv>
+  <button (click)="getProducts()">Load Products</button>
 
-<ul>
-  <li *ngFor = "let product of products; even as isEven; trackBy: trackProduct">{{ product.name }}
-    <span *ngIf="isEven">This element is even numbered</span>
-  </li>
-</ul>
-<button (click) = "addAnItem()">Add new Element</button>
-<button (click) = "removeAnItem()">Remove One Element</button>
+  <ul>
+    <li *ngFor = "let product of products; even as isEven; trackBy: trackProduct">{{ product.name }}
+      <span *ngIf="isEven">This element is even numbered</span>
+    </li>
+  </ul>
+  <button (click) = "addAnItem()">Add new Element</button>
+  <button (click) = "removeAnItem()">Remove One Element</button>
+  
+  <input #inputElement type='text' [(ngModel)]='email' value='{{email}}' (keyup.enter)="templateReferenceRevision()">
+</div>
