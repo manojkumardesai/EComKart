@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProductService } from '../product.service';
 import { LoginService } from '../login.service';
 
@@ -17,15 +17,20 @@ export class ProductsComponent implements OnInit {
   public parentStateCHange;
   public verifiedStatus;
   public resultLoaded = false;
+  @ViewChild('inputElement') inputElement: ElementRef;
+  @ViewChild('entireDiv') entireDiv: ElementRef;
   constructor(public productResponse: ProductService,
     public loginService: LoginService) {
   }
 
   ngOnInit() {
     this.counter = 0;
-    //this.products = this.productResponse.getProducts();
+    // this.products = this.productResponse.getProducts();
     this.product = this.productResponse.getProduct();
     this.email = 'manojkumar@gmail.com';
+    console.log(this.inputElement.nativeElement);
+    
+
   }
 
 
@@ -80,5 +85,9 @@ export class ProductsComponent implements OnInit {
 
   parentDataFromChild(data) {
     this.verifiedStatus = data;
+  }
+
+  public templateReferenceRevision() {
+    console.log(this.inputElement.nativeElement);
   }
 }
