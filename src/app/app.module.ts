@@ -8,6 +8,8 @@ import { ProductsComponent } from './products/products.component';
 import { ProductService } from './product.service';
 import { LoginService } from './login.service';
 import { FavoriteComponent } from './shared/favorite/favorite.component';
+import { InputFormatDirective } from './input-format.directive';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { FavoriteComponent } from './shared/favorite/favorite.component';
     AppComponent,
     HeaderComponent,
     ProductsComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    InputFormatDirective,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

@@ -4,9 +4,11 @@
   <li [class.active]="viewMode == 'list'"><a (click) = "viewMode = 'list'">List View</a></li>
 </ul>
 <div [ngSwitch] = "viewMode">
-  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'map'">
+    <app-favorite></app-favorite>
+  </div>
   <div *ngSwitchCase= "'list'">
-    <app-products></app-products>
+      <app-contact-form></app-contact-form>
   </div>
   <div *ngSwitchDefault>Otherwise</div>
 </div>

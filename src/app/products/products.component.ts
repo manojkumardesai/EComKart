@@ -29,8 +29,6 @@ export class ProductsComponent implements OnInit {
     this.product = this.productResponse.getProduct();
     this.email = 'manojkumar@gmail.com';
     console.log(this.inputElement.nativeElement);
-    
-
   }
 
 

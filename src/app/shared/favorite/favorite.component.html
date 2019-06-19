@@ -1,9 +1,20 @@
 <span class="glyphicon"
-[class.glyphicon-star] = "isFavorite"
-[class.glyphicon-star-empty] = "!isFavorite"
+[ngClass] = "{
+    'glyphicon-star': isFavorite,
+    'glyphicon-star-empty': !isFavorite
+}"
 style="font-size: 20px;"
 (click) = 'toggleFavorite()'></span>
 
+<div
+    [ngStyle] = "{
+        'color' : isFavorite ? 'blue' : 'red',
+        'fontWeight': isFavorite ? 'bold' : 'normal'
+    }"
+    >
+    Hello this is inline styling
+</div>
+<input type="text" [appInputFormat] = "'uppercase'" >
 <p> Name: {{childUserInfo?.name }}</p>
 <p> Action: {{childUserInfo?.action }}</p>
 <p> Number of times clicked: {{childUserInfo?.counter }}</p>
