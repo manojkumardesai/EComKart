@@ -1,8 +1,30 @@
-<form>
+<form #formObject="ngForm" (ngSubmit)="submit(formObject)">
   <div class="form-group">
       <label for="firstName">First Name</label>
-      <input required ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id='firstName' type="text" class="form-control">
-      <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">Boss, First Name is required field. Please enter your name</div>
+      <input
+        required
+        minlength="5"
+        maxlength="15"
+        pattern="Orange"
+        ngModel
+        name="firstName"
+        #firstName="ngModel"
+        (change)="log(firstName)"
+        id='firstName'
+        type="text"
+        class="form-control">
+      <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+        <div *ngIf="firstName.errors.required">
+          First name is required
+        </div>
+        <div *ngIf="firstName.errors.minlength">
+          First name should atleast be {{ firstName.errors.minlength.requiredLength }}
+          characters in length, you have entered only {{ firstName.errors.minlength.actualLength }}
+        </div>
+        <div *ngIf="firstName.errors.pattern">
+          First name pattern is not matching
+        </div>
+      </div>
     </div>
   <div class="form-group">
     <label for="comment">Comment</label>
