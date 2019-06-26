@@ -1,6 +1,5 @@
 <form #formObject="ngForm" (ngSubmit)="submit(formObject)">
   <div ngModelGroup="contact" #contact="ngModelGroup">
-    
       <div class="form-group">
           <label for="firstName">First Name</label>
           <input
@@ -37,6 +36,12 @@
     <label>
       <input type="checkbox" ngModel name="isSubscribed">Subscribe to promotional mails
     </label>
+  </div>
+  <div class="form-group">
+    <label for="contactMethod">Contact Method</label>
+    <select name="contactMethod" id="contactMethod" ngModel class="form-control">
+      <option *ngFor="let method of contactMethods" [ngValue]="method">{{method.name}}</option>
+    </select>
   </div>
   <p>
     {{ formObject.value | json }}
