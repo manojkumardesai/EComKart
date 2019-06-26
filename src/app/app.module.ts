@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,6 +10,7 @@ import { LoginService } from './login.service';
 import { FavoriteComponent } from './shared/favorite/favorite.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 
 @NgModule({
@@ -19,12 +20,14 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     ProductsComponent,
     FavoriteComponent,
     InputFormatDirective,
-    ContactFormComponent
+    ContactFormComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProductService,
