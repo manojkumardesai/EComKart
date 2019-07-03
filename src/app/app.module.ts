@@ -12,7 +12,7 @@ import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { CoursesComponent } from './courses/courses.component';
-import { CoursesService } from './courses/courses.service';
+import { CoursesService } from './courses.service';
 
 
 @NgModule({
