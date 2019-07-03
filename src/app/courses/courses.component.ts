@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from './courses.service';
+import { CoursesService } from '../courses.service';
 
 
 @Component({
@@ -9,6 +9,7 @@ import { CoursesService } from './courses.service';
 })
 export class CoursesComponent implements OnInit {
   title = 'Angular Courses';
+  coursesImage = 'http://lorempixel.com/100/100/sports';
   courses;
   constructor(service: CoursesService) {
     this.courses = service.getCourses();
