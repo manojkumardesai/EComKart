@@ -15,5 +15,14 @@
             type="text" 
             class="form-control">
     </div>
-    <button class="btn btn-primary" type="submit">Sign Up</button>
+    <div class="form-group">
+        <label for="coupon">Coupon</label>
+        <input 
+            formControlName="coupon"
+            id="coupon" 
+            type="text" 
+            class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="submit()">Sign Up</button>
 </form>
+<p>Try using this code for discount: {{ couponCode }}</p>

@@ -11,6 +11,8 @@ import { FavoriteComponent } from './shared/favorite/favorite.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CoursesService } from './courses.service';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     FavoriteComponent,
     InputFormatDirective,
     ContactFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
   ],
   providers: [
     ProductService,
-    LoginService
+    LoginService,
+    CoursesService
   ],
   bootstrap: [AppComponent]
 })
