@@ -3,6 +3,22 @@
 </p>
 
 <img [src] = "coursesImage" />
+
+<table border = 1>
+  <tr>
+    <td [attr.colspan]="colspanvar">Two Columns</td>
+  </tr>
+  <tr>
+    <td colspan="1">One</td>
+    <td colspan="1">Col</td>
+  </tr>
+</table>
 <ul>
   <li *ngFor="let course of courses">{{ course }}</li>
 </ul>
+<div (click)='onDivClicked()'>
+  <button (click) = "onSave($event)">Save</button>
+</div>
+
+<input [(ngModel)] = "parentCourseCoupon" />
+<app-signup-form [couponCode]="parentCourseCoupon" (wasCouponUsed)= "couponUsage($event)"></app-signup-form>
