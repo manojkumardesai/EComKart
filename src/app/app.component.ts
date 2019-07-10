@@ -9,9 +9,9 @@ export class AppComponent {
   title = 'EcomKart';
   viewMode: String = '';
 
-  changeViewMode(view) {
-    this.viewMode = view;
-  }
+  // changeViewMode(view) {
+  //   this.viewMode = view;
+  // }
 }
 
 

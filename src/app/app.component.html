@@ -1,8 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <ul class="nav nav-pills">
-  <li [class.active]="viewMode == 'map'" ><a (click) = "viewMode = 'map'">Reactive Form</a></li>
-  <li [class.active]="viewMode == 'list'"><a (click) = "viewMode = 'list'">Template Driven Form</a></li>
+  <li [class.active]="viewMode == 'map'" >
+    <a (click) = "viewMode = 'map'">Reactive Form</a>
+  </li>
+  <li [class.active]="viewMode == 'list'">
+    <a (click) = "viewMode = 'list'">Template Driven Form</a>
+  </li>
 </ul>
+<p>
+    Value of View Mode : {{ viewMode }} <br/>
+    Comparison Result with value Map : {{ viewMode == 'map'}} <br/>
+    Comparison Result with value List : {{ viewMode == 'list'}} <br/>
+</p>
+
 <div [ngSwitch] = "viewMode">
   <div *ngSwitchCase="'map'">
       <app-courses></app-courses>
