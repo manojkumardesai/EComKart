@@ -14,6 +14,7 @@ export class CoursesComponent implements OnInit {
   courses;
   phoneNumbers = 0;
   parentCourseCoupon = 'FREECOURSE';
+  isLoggedIn = true;
   constructor(service: CoursesService) {
     this.courses = service.getCourses();
   }
