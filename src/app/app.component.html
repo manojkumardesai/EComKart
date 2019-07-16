@@ -6,12 +6,15 @@
   <li [class.active]="viewMode == 'list'">
     <a (click) = "viewMode = 'list'">Template Driven Form</a>
   </li>
+  <li [class.active]="viewMode == 'posts'">
+    <a (click) = "viewMode = 'posts'">Posts</a>
+  </li>
 </ul>
-<p>
+<!-- <p>
     Value of View Mode : {{ viewMode }} <br/>
     Comparison Result with value Map : {{ viewMode == 'map'}} <br/>
     Comparison Result with value List : {{ viewMode == 'list'}} <br/>
-</p>
+</p> -->
 
 <div [ngSwitch] = "viewMode">
   <div *ngSwitchCase="'map'">
@@ -19,6 +22,9 @@
   </div>
   <div *ngSwitchCase= "'list'">
       <app-contact-form></app-contact-form>
+  </div>
+  <div *ngSwitchCase= "'posts'">
+      <app-posts></app-posts>
   </div>
   <div *ngSwitchDefault>Otherwise</div>
 </div>
