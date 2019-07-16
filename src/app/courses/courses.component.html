@@ -2,11 +2,20 @@
  {{ title }}
 </p>
 
-<img [hidden] = 'isLoggedIn' [src] = "coursesImage" />
+<img [ngStyle] = "{
+      'height': '350px',
+      'border': '5px solid',
+      'borderColor' : themeBlue ? 'blue' : 'black'
+    }" [src] = "coursesImage" />
 
-
+<button (click)="onAdd()">Add Course</button>
+<button (click)="loadCourses()">Load Courses</button>
 <ul>
-  <li *ngFor="let course of courses">{{ course.courseName }}</li>
+  <li *ngFor="let course of courses; trackBy: trackCourse" [ngClass] = "{
+    'disabledItemClass' : isOUtOfStock
+  }">{{ course?.courseName }} - {{ course?.faculty?.name }}
+    <button (click)="onRemove(course)">Remove</button>
+  </li>
 </ul>
 <div (click)='onDivClicked()'>
   <button (click) = "onSave($event)">Save</button>

@@ -15,7 +15,8 @@ export class CoursesComponent implements OnInit {
   phoneNumbers = 0;
   parentCourseCoupon = 'FREECOURSE';
   isLoggedIn = true;
-  constructor(service: CoursesService) {
+  themeBlue = true;
+  constructor(public service: CoursesService) {
     this.courses = service.getCourses();
   }
 
@@ -26,6 +27,43 @@ export class CoursesComponent implements OnInit {
 
   getTitle() {
     return this.title;
+  }
+
+  onAdd() {
+    this.courses.push({
+      courseName: 'Angular Expert Class',
+      courseFee: '9000',
+      duration: 20,
+      id: 4
+    });
+  }
+
+  onRemove(course) {
+    const index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
+
+  trackCourse(index, course) {
+    return course ? course.id : undefined;
+  }
+
+  loadCourses() {
+    this.courses = this.service.getCourses();
+    this.courses.push({
+      courseName: 'Angular Expert Class',
+      courseFee: '9000',
+      duration: 20,
+      id: 4
+    });
+    this.courses.push({
+      courseName: 'Angular Expert Class',
+      courseFee: '9000',
+      duration: 20,
+      id: 5,
+      faculty: {
+        name: 'Manoj'
+      }
+    });
   }
 
   onSave($event) {
